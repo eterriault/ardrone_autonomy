@@ -137,6 +137,8 @@ target_link_libraries(
     ${Boost_LIBRARIES}
     ${catkin_LIBRARIES}
 )
+add_executable(traj_pub nodes/traj_pub.cpp)
+target_link_libraries(traj_pub ${catkin_LIBRARIES} )
 
 add_dependencies(ardrone_driver ardronelib ${PROJECT_NAME}_gencpp)
 
@@ -150,4 +152,3 @@ install(DIRECTORY launch/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
     PATTERN ".git" EXCLUDE
 )
-
